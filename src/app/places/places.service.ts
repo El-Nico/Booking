@@ -63,6 +63,7 @@ export class PlacesService {
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
+  
   fetchPlaces() {
     return this.authService.token.pipe(
       take(1),
