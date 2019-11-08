@@ -68,7 +68,7 @@ export class PlacesService {
       take(1),
       switchMap(token => {
         return this.http.get<{ [key: string]: PlaceData }>(
-          `https://ionic-angular-course.firebaseio.com/offered-places.json?auth=${token}`
+          `https://ionic-angular-course-193ed.firebaseio.com/offered-places.json?auth=${token}`
         );
       }),
       map(resData => {
@@ -104,7 +104,7 @@ export class PlacesService {
       take(1),
       switchMap(token => {
         return this.http.get<PlaceData>(
-          `https://ionic-angular-course.firebaseio.com/offered-places/${id}.json?auth=${token}`
+          `https://ionic-angular-course-193ed.firebaseio.com/offered-places/${id}.json?auth=${token}`
         );
       }),
       map(placeData => {
@@ -174,7 +174,7 @@ export class PlacesService {
           location
         );
         return this.http.post<{ name: string }>(
-          `https://ionic-angular-course.firebaseio.com/offered-places.json?auth=${token}`,
+          `https://ionic-angular-course-193ed.firebaseio.com/offered-places.json?auth=${token}`,
           {
             ...newPlace,
             id: null
@@ -233,7 +233,7 @@ export class PlacesService {
           oldPlace.location
         );
         return this.http.put(
-          `https://ionic-angular-course.firebaseio.com/offered-places/${placeId}.json?auth=${fetchedToken}`,
+          `https://ionic-angular-course-193ed.firebaseio.com/offered-places/${placeId}.json?auth=${fetchedToken}`,
           { ...updatedPlaces[updatedPlaceIndex], id: null }
         );
       }),
