@@ -1,5 +1,5 @@
-this is a simple CRUD app where you can create read update delete
-hotel and bnb offers
-© Nicholas Chibuike-Eruba 2019,
-built from ionic 4 course on udemy by 
-maximillian scwarzmueller
+# Booking
+
+Mean Stack web and mobile CRUD app, cross platform compilation is done with Ionic Framework, and deployed with firebase
+the purpose of this app is to search, book and offer bookable places to stay at an affordable price
+kinda like airbnb
