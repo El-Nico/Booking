@@ -16,5 +16,8 @@
     "cors": "^2.8.4",
     "uuid": "^3.2.1"
   },
+  "engines": {
+    "node": "8"
+  },
   "private": true
 }

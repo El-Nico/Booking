@@ -10,11 +10,11 @@ const fbAdmin = require('firebase-admin');
 const { Storage } = require('@google-cloud/storage');
 
 const storage = new Storage({
-  projectId: 'YOUR_FIREBASE_PROJECT_ID'
+  projectId: 'ionic-angular-course-193ed'
 });
 
 fbAdmin.initializeApp({
-  credential: fbAdmin.credential.cert(require('YOUR_FIREBASE_CREDENTIALS'))
+  credential: fbAdmin.credential.cert(require('./ionic-app.json'))
 });
 
 exports.storeImage = functions.https.onRequest((req, res) => {
@@ -60,7 +60,7 @@ exports.storeImage = functions.https.onRequest((req, res) => {
         .then(decodedToken => {
           console.log(uploadData.type);
           return storage
-            .bucket('YOUR_FIREBASE_PROJECT_ID.appspot.com')
+            .bucket('ionic-angular-course-193ed.appspot.com')
             .upload(uploadData.filePath, {
               uploadType: 'media',
               destination: imagePath,
@@ -76,7 +76,7 @@ exports.storeImage = functions.https.onRequest((req, res) => {
           return res.status(201).json({
             imageUrl:
               'https://firebasestorage.googleapis.com/v0/b/' +
-              storage.bucket('YOUR_FIREBASE_PROJECT_ID.appspot.com').name +
+              storage.bucket('ionic-angular-course-193ed.appspot.com').name +
               '/o/' +
               encodeURIComponent(imagePath) +
               '?alt=media&token=' +
